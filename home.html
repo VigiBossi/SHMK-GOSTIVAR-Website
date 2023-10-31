@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHMK-Gostivari</title>
+    <link href="https://db.onlinewebfonts.com/c/4267d8aa8711bb8c72cbefb26066c9e0?family=Bookman+Old+Style+V2" rel="stylesheet">
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/4267d8aa8711bb8c72cbefb26066c9e0?family=Bookman+Old+Style+V2);
+        
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            background-image: url(background.png);
+            height: 100vh;
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+        .english, .albanian, .macedonian, .turkish {
+      display: none;
+      
+    }
+    .header1{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: 10px;
+    }
+    .header-ul{
+        display: flex;
+        flex-direction: row ;
+        list-style: none;
+        align-content: right;
+        position: relative;
+        right: -700px;
+    }
+    .header-ul li{
+        color: white;
+        text-decoration:none ;
+        margin-left: 80px;
+        font-size: 20px;
+        font-family: "Bookman Old Style V2";
+    }
+    #languageSelector{
+        background-color: transparent;
+        color: white;
+        font-size: 20px;
+        border:none;
+        margin-left: 90px;
+        font-family: "Bookman Old Style V2";
+    }
+    #languageSelector option{
+        color: black;
+        background: gray;
+    }
+ .Logo{
+    height: 32px;
+    position: relative;
+    left: 20px;
+    top: 15px;
+ }
+ .active{
+    color: #fbb033 !important;
+ }
+    </style>
+</head>
+<body>
+   <div class="main">
+   <header class="header1">
+    <img class="Logo" src="Logo.png" alt="">
+    <ul class="header-ul">
+        <li class="active">Home</li>
+        <li>Contact</li>
+        <li>Activites</li>
+        
+        <select id="languageSelector" onchange="changeLanguage()">
+          <option value="english">English</option>
+          <option value="albanian">Albanian</option>
+          <option value="macedonian">Macedonian</option>
+          <option value="turkish">Turkish</option>
+        </select>
+    </ul>
+   </header>
+   </div> 
+   <script>
+    function changeLanguage() {
+      const selectedLanguage = document.getElementById('languageSelector').value;
+      const elements = document.querySelectorAll('.english, .albanian, .macedonian, .turkish');
+
+      elements.forEach((element) => {
+        element.style.display = 'none';
+      });
+
+      const selectedElements = document.querySelectorAll('.' + selectedLanguage);
+      selectedElements.forEach((element) => {
+        element.style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>
