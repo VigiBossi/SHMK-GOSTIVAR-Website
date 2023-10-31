@@ -23,8 +23,6 @@
       
     }
     .header1{
-        display: flex;
-        flex-direction: row;
         position: relative;
         top: 10px;
     }
@@ -35,6 +33,8 @@
         align-content: right;
         position: relative;
         right: -700px;
+        top: -39px;
+        width: 688px;
     }
     .header-ul li{
         color: white;
@@ -64,6 +64,26 @@
  .active{
     color: #fbb033 !important;
  }
+ .main-div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+ }
+ .main-text{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+  top: 100px;
+ }
+ .learn-more-button{
+  background-color: #fbb033 !important;
+  padding: 10px 20px;
+  border: none;
+  font-size: 20px;
+  color: white;
+ }
     </style>
 </head>
 <body>
@@ -83,6 +103,14 @@
         </select>
     </ul>
    </header>
+   <div class="main-div">
+    <div class="main-text"><h1>Your Kids <br>
+      Deserve The <br>
+      BEST EDUCATION</h1>
+    <button class="learn-more-button">Learn More</button>
+    </div>
+    <div class="Logo"></div>
+   </div>
    </div> 
    <script>
     function changeLanguage() {
